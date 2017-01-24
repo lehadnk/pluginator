@@ -6,6 +6,7 @@ require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Compos
 
 use Pluginator\Core;
 use PHPUnit\Framework\TestCase;
+use Pluginator\EventHandler;
 
 /**
  * Author: Zauzin Alexey <lehadnk@gmail.com>
@@ -36,34 +37,38 @@ class CoreTest extends TestCase
     }
 
     public function testNonExisting() {
-        \Pluginator\EventHandler::trigger('nonExisting');
+        EventHandler::trigger('nonExisting');
     }
 
     public function testDoNothing() {
-        \Pluginator\EventHandler::trigger('doNothing');
+        EventHandler::trigger('doNothing');
     }
 
     public function testClosure() {
         $a = 0;
-        \Pluginator\EventHandler::trigger('testClosure', [&$a]);
+        EventHandler::trigger('testClosure', [&$a]);
         $this->assertEquals(5, $a);
     }
 
     public function testFunction() {
         $a = 0;
-        \Pluginator\EventHandler::trigger('testFunction', [&$a]);
+        EventHandler::trigger('testFunction', [&$a]);
         $this->assertEquals(10, $a);
     }
 
     public function testStatic() {
         $a = 0;
-        \Pluginator\EventHandler::trigger('testStatic', [&$a]);
+        EventHandler::trigger('testStatic', [&$a]);
         $this->assertEquals(20, $a);
     }
 
     public function testObject() {
         $a = 0;
-        \Pluginator\EventHandler::trigger('testObject', [&$a]);
+        EventHandler::trigger('testObject', [&$a]);
         $this->assertEquals(40, $a);
+    }
+
+    public function testReload() {
+        Core::reloadPlugins();
     }
 }

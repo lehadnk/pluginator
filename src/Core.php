@@ -16,6 +16,8 @@ class Core
     private static $pluginContainer;
 
     /**
+     * Config array of the pluginator.
+     * Should be assoc array.
      * @var array;
      */
     private static $config = [
@@ -41,5 +43,9 @@ class Core
         }
 
         return self::$config[$var];
+    }
+
+    static public function reloadPlugins() {
+        self::$pluginContainer->loadPlugins();
     }
 }

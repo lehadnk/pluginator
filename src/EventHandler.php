@@ -25,4 +25,8 @@ class EventHandler
             call_user_func_array($function, $args);
         }
     }
+
+    public static function clearEventMap() {
+        self::$eventMap = [];
+    }
 }

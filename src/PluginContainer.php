@@ -43,6 +43,7 @@ class PluginContainer implements \IteratorAggregate
     }
 
     public function loadPlugins() {
+        EventHandler::clearEventMap();
         $plugins = $this->scanPluginDir();
 
         foreach ($plugins as $plugin) {
