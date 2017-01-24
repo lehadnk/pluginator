@@ -9,6 +9,8 @@
 namespace Pluginator;
 
 /**
+ * Class Core
+ *
  * Core class of the pluginator package.
  * Contains all the system operations.
  *
