@@ -1,0 +1,22 @@
+{
+    "name": "lehadnk/pluginator",
+    "description": "Easy way to provide a plugin support in your projects.",
+    "authors": [
+        {
+            "name": "Alexey Zauzin",
+            "email": "lehadnk@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Pluginator": "src/"
+        }
+    }
+}
