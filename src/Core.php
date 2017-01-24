@@ -10,12 +10,36 @@ namespace Pluginator;
 
 class Core
 {
+    /**
+     * @var PluginContainer;
+     */
+    private static $pluginContainer;
+
+    /**
+     * @var array;
+     */
+    private static $config = [
+        'pluginsDir' => '/plugins/',
+    ];
+
     static function init() {
-        echo "Initialization process";
+        self::$pluginContainer = new PluginContainer(self::getConfig('pluginsDir'));
+        self::$pluginContainer->loadPlugins();
     }
 
-    static function hook($name, $args) {
-        echo "$name operation handler";
-        print_r($args);
+    static public function setConfig(array $config) {
+        self::$config = $config;
+    }
+
+    static public function getConfig($var = null, $default = null) {
+        if ($var === null) {
+            return self::$config;
+        }
+
+        if (!isset(self::$config[$var])) {
+            return $default;
+        }
+
+        return self::$config[$var];
     }
 }
