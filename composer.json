@@ -1,6 +1,7 @@
 {
     "name": "lehadnk/pluginator",
     "description": "Easy way to provide a plugin support in your projects.",
+    "keywords": ["plugin"],
     "authors": [
         {
             "name": "Alexey Zauzin",
@@ -15,8 +16,8 @@
         "phpunit/phpunit": "*"
     },
     "autoload": {
-        "psr-0": {
-            "Pluginator": "src/"
+        "psr-4": {
+            "Pluginator\\": "src/"
         }
     }
 }

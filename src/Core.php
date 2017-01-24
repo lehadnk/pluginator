@@ -8,7 +8,6 @@
 
 namespace Pluginator;
 
-
 class Core
 {
     static function init() {
