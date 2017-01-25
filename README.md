@@ -112,7 +112,7 @@ Your handlers will be executed by the application, so as long as some auto-loadi
 
 ##### Passing by reference
 You can pass a variable by reference to a function so the function can modify the variable. The syntax is as follows: 
-```
+```php
 \Pluginator\EventHandler::bind('testFunction', function (&$b) {
     $b += 10;
 });
