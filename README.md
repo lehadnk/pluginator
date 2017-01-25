@@ -70,7 +70,7 @@ plugin.php is the only plugin entry point. It's being called once plugin is bein
 \Pluginator\EventHandler::bind('emailEntered', function() {});
 ```
 
-##### Binders
+#### Binders
 You could use all types of callable entities to bind your handlers:
 ```php
 \Pluginator\EventHandler::bind('testFunction', function (&$b) {
@@ -98,7 +98,7 @@ $plugin = new TestPlugin();
 \Pluginator\EventHandler::bind('testObject', [$plugin, 'testObject']);
 ```
 
-##### Integration with an application
+#### Integration with an application
 Your handlers will be executed by the application, so as long as some auto-loading feature is there, you could access all the framework/application features:
 ```php
 // Plugin for yii2-powered project
@@ -110,7 +110,7 @@ Your handlers will be executed by the application, so as long as some auto-loadi
 });
 ```
 
-##### Passing by reference
+#### Passing by reference
 You can pass a variable by reference to a function so the function can modify the variable. The syntax is as follows: 
 ```php
 \Pluginator\EventHandler::bind('testFunction', function (&$b) {
