@@ -46,4 +46,4 @@ ratings:
   - "**.py"
   - "**.rb"
 exclude_paths:
-  - "Test/"
+  - "Test/**.php"
